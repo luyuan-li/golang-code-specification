@@ -1,5 +1,7 @@
 package repository
 
+import "gorm.io/gorm"
+
 const (
 	CollectionNameUser = "user"
 )
@@ -7,10 +9,10 @@ const (
 type IUserRepo interface {
 }
 
-func NewUserRepo() IUserRepo {
-	return &userRepo{ /*coll: cli.Database(database).Collection(CollectionNameUser)*/ }
+func NewUserRepo(db *gorm.DB) IUserRepo {
+	return &userRepo{db}
 }
 
 type userRepo struct {
-	//coll *qmgo.Collection
+	db *gorm.DB
 }
