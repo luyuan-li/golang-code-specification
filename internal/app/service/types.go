@@ -4,6 +4,6 @@ var (
 	UserService IUserService
 )
 
-func InitService() {
+func Init() {
 	UserService = NewUserService()
 }

@@ -14,8 +14,8 @@ func Serve(conf *config.Config) {
 
 	mysqlDB := pkg.InitMysqlDB(conf.Mysql)
 
-	repository.InitRepo(mysqlDB)
-	service.InitService()
+	repository.Init(mysqlDB)
+	service.Init()
 
 	server := api.RegisterApi(&conf.App)
 	server.Start()

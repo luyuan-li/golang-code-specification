@@ -6,6 +6,6 @@ var (
 	UserRepo IUserRepo
 )
 
-func InitRepo(db *gorm.DB) {
+func Init(db *gorm.DB) {
 	UserRepo = NewUserRepo(db)
 }

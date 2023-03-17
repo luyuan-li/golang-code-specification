@@ -1,12 +1,20 @@
 package enum
 
 type (
-	UserStatus int
+	UserStatus    int
+	ServiceStatus int
 )
 
 const (
-	// EnableUserStatus 启用
-	EnableUserStatus UserStatus = 0
-	// DisabledUserStatus 禁用
-	DisabledUserStatus UserStatus = 1
+	UserStatusEnable   UserStatus = 1 //启用
+	UserStatusDisabled UserStatus = 2 //禁用
+
+	ServiceStatusEnable   ServiceStatus = 1 //启用
+	ServiceStatusDisabled ServiceStatus = 2 //禁用
 )
+
+//TODO 可以将枚举写成map，如下
+var UserStatusMap = map[UserStatus]string{
+	UserStatusEnable:   "启用",
+	UserStatusDisabled: "禁用",
+}
