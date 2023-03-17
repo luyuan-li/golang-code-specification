@@ -7,13 +7,24 @@ import (
 )
 
 type Config struct {
-	App App `mapstructure:"app"`
+	App   App   `mapstructure:"app"`
+	Mysql Mysql `mapstructure:"mysql"`
 }
 
 type (
 	App struct {
-		Addr     string `mapstructure:"address"`
+		Address  string `mapstructure:"address"`
 		LogLevel string `mapstructure:"log_level"`
+	}
+
+	Mysql struct {
+		Host     string `mapstructure:"host"`
+		Port     int    `mapstructure:"port"`
+		Username string `mapstructure:"username"`
+		Password string `mapstructure:"password"`
+		Database string `mapstructure:"database"`
+		Charset  string `mapstructure:"charset"`
+		Timezone string `mapstructure:"timezone"`
 	}
 )
 

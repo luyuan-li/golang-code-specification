@@ -3,13 +3,11 @@ package api
 import (
 	"net/http"
 
-	"github.com/golang-code-specification/internal/app/api/router"
-
-	"github.com/golang-code-specification/internal/app/config"
-
 	"github.com/golang-code-specification/internal/app/api/middleware"
 	"github.com/golang-code-specification/internal/app/api/rest"
+	"github.com/golang-code-specification/internal/app/api/router"
 	"github.com/golang-code-specification/internal/app/api/server"
+	"github.com/golang-code-specification/internal/app/config"
 )
 
 func RegisterApi(conf *config.App) server.Server {
@@ -21,7 +19,7 @@ func RegisterApi(conf *config.App) server.Server {
 	rest.NewUserRouter(commonGroup.Group("/user"))
 
 	srv := &http.Server{
-		Addr:    conf.Addr,
+		Addr:    conf.Address,
 		Handler: r,
 	}
 	return server.NewServer(srv)

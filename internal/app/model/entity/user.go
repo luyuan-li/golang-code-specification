@@ -6,3 +6,7 @@ type User struct {
 	Age    int64  `gorm:"column:age;type:int;comment:年龄" json:"age"`
 	Mobile string `gorm:"column:mobile;type:varchar(32);comment:手机号" json:"mobile"`
 }
+
+func (u User) TableName() string {
+	return "user"
+}
