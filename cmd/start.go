@@ -9,14 +9,14 @@ import (
 )
 
 const (
-	defaultLocalConfig = "/home/lly/GolandProjects/github.com/golang-code-specification/config/config.yaml"
+	defaultLocalConfig = "/opt/local.yaml"
 )
 
 var (
 	localConfig string
 	startCmd    = &cobra.Command{
 		Use:   "start",
-		Short: "Start Project Server.",
+		Short: "Start project-name Server.",
 		Run: func(cmd *cobra.Command, args []string) {
 			start()
 		},
