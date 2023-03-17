@@ -1,12 +1,15 @@
 package resp
 
+import "github.com/golang-code-specification/internal/app/enum"
+
 type (
-	UserResp struct {
-		ID     uint   `json:"id"`
-		Name   string `json:"name"`
-		Age    int64  `json:"age"`
-		Mobile string `json:"mobile"`
+	User struct {
+		ID         uint            `json:"id"`
+		Name       string          `json:"name"`
+		Age        int64           `json:"age"`
+		Mobile     string          `json:"mobile"`
+		UserStatus enum.UserStatus `json:"user_status"`
 	}
 
-	UserListResp []UserResp
+	UserList []User
 )

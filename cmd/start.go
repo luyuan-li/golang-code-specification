@@ -5,7 +5,6 @@ import (
 
 	"github.com/golang-code-specification/internal/app"
 	"github.com/golang-code-specification/internal/app/config"
-
 	"github.com/spf13/cobra"
 )
 

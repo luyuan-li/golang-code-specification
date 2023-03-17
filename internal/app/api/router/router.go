@@ -3,17 +3,16 @@ package router
 import (
 	"log"
 
-	"github.com/golang-code-specification/internal/app/global"
-
 	"github.com/gin-gonic/gin"
+	"github.com/golang-code-specification/internal/app/global"
 )
 
 func NewRouter() *gin.Engine {
 	level := global.Config.App.LogLevel
-	if level == "pro" || level == "prod" || level == "release" || level == "info" {
-		gin.SetMode(gin.ReleaseMode)
-	} else {
+	if level == "debug" {
 		gin.SetMode(gin.DebugMode)
+	} else {
+		gin.SetMode(gin.ReleaseMode)
 	}
 
 	r := gin.New()
