@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	defaultLocalConfig = "/home/lly/GolandProjects/github.com/golang-code-specification/config/config.yaml"
+	defaultLocalConfig = "/opt/local.yaml"
 )
 
 var (

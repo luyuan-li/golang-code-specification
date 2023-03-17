@@ -18,6 +18,7 @@ func RegisterApi(conf *config.App) server.Server {
 	commonGroup := r.Group("")
 
 	rest.NewUserRouter(commonGroup.Group("/user"))
+	rest.NewVersionRouter(commonGroup.Group("/version"))
 
 	srv := &http.Server{
 		Addr:    conf.Address,

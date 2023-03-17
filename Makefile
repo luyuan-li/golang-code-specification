@@ -3,14 +3,15 @@ GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GO_MOD=$(GOCMD) mod
 GO_ENV=$(GOCMD) env
-BINARY_NAME=iobscan-explorer-backend
+BINARY_NAME=project-name
 BINARY_UNIX=$(BINARY_NAME)-unix
-export GO111MODULE = on
-export GOSUMDB=off
-export GIT_TERMINAL_PROMPT=1
-export GOPROXY=https://goproxy.cn,direct
 
 all: get_vendor build
+
+GITTAG=`git describe --tags`
+GITHASH=`git rev-parse --short HEAD`
+
+LDFLAGS=-ldflags "-X rest.GitTag=${GITTAG} -X rest.GitHash=${GITHASH}"
 
 get_vendor:
 	@rm -rf vendor/
